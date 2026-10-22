@@ -2,6 +2,8 @@
 
 在 Eagle 中按空格播放 Spine 动画，并自动生成动态缩略图。
 
+**[下载插件安装包 v1.0.0](https://github.com/mengqiqi0306-ops/eagle-spine-preview/releases/download/v1.0.0/spine-animation-preview-1.0.0.eagleplugin)** · [发布说明与演示素材](https://github.com/mengqiqi0306-ops/eagle-spine-preview/releases/latest)
+
 ![spine动画预览](docs/images/cover.zh-CN.png)
 
 ## 功能
@@ -23,7 +25,7 @@
 
 ## 使用
 
-1. 安装插件后，完全退出并重启 Eagle。
+1. 下载 Releases 中的 `.eagleplugin` 安装包，在 Eagle 中打开安装，然后完全退出并重启 Eagle。
 2. 将骨骼、图集和全部纹理一起导入，建议放在同一个 Eagle 文件夹。
 3. 选中骨骼或图集，按空格播放；后台也会自动检查并生成缩略图。
 
@@ -45,7 +47,7 @@ samples/robot-demo/  原创机器人演示素材
 
 开发时在 Eagle 插件开发菜单加载 `plugin/` 目录。通过 Eagle 插件列表的“打包插件 / Pack Plugin”导出 `.eagleplugin`；不要把普通 ZIP 改后缀作为官方安装包。导出前排除运行生成的 `status.json`，并验证最终安装包在独立位置安装后可用。
 
-本仓库当前提供源码与使用资料，尚未附加官方导出的安装包。
+官方导出的安装包已提供在 [Releases](https://github.com/mengqiqi0306-ops/eagle-spine-preview/releases)。GitHub 自动生成的 Source code ZIP/tar.gz 是源码归档，不是插件安装包。
 
 ## 示例
 

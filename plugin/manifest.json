@@ -1,0 +1,39 @@
+{
+  "id": "eagle-spine-preview-36-local",
+  "version": "1.0.0",
+  "platform": "win",
+  "arch": "all",
+  "name": "spine动画预览",
+  "logo": "/logo.png",
+  "keywords": [
+    "spine",
+    "skel",
+    "spinezip",
+    "动画"
+  ],
+  "devTools": false,
+  "preview": {
+    "skel,spinezip": {
+      "thumbnail": {
+        "path": "thumbnail.js",
+        "size": 400
+      },
+      "viewer": {
+        "path": "viewer.html"
+      }
+    },
+    "atlas,json,txt,bytes,zip": {
+      "viewer": {
+        "path": "viewer.html"
+      }
+    }
+  },
+  "main": {
+    "url": "service.html",
+    "width": 1000,
+    "height": 760,
+    "resizable": true,
+    "show": false,
+    "serviceMode": true
+  }
+}

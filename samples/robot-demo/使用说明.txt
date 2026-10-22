@@ -1,0 +1,2 @@
+原创机器人演示素材，由本插件发布材料制作过程生成。可随插件分发、修改和演示。
+把 robot-demo.json、robot-demo.atlas、robot-demo.png 一起导入 Eagle 同一个文件夹。选择 JSON 或 atlas 按空格播放。

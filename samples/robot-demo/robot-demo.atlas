@@ -1,0 +1,33 @@
+robot-demo.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body
+  rotate: false
+  xy: 8, 8
+  size: 112, 116
+  orig: 112, 116
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 140, 8
+  size: 112, 88
+  orig: 112, 88
+  offset: 0, 0
+  index: -1
+arm
+  rotate: false
+  xy: 280, 8
+  size: 36, 88
+  orig: 36, 88
+  offset: 0, 0
+  index: -1
+leg
+  rotate: false
+  xy: 340, 8
+  size: 40, 100
+  orig: 40, 100
+  offset: 0, 0
+  index: -1

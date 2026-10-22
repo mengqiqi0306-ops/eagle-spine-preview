@@ -1,0 +1,225 @@
+{
+  "skeleton": {
+    "spine": "3.8.99",
+    "width": 240,
+    "height": 290
+  },
+  "bones": [
+    {
+      "name": "root"
+    },
+    {
+      "name": "torso",
+      "parent": "root",
+      "y": 120
+    },
+    {
+      "name": "head",
+      "parent": "torso",
+      "y": 101
+    },
+    {
+      "name": "arm-left",
+      "parent": "torso",
+      "x": -68,
+      "y": 34
+    },
+    {
+      "name": "arm-right",
+      "parent": "torso",
+      "x": 68,
+      "y": 34
+    },
+    {
+      "name": "leg-left",
+      "parent": "torso",
+      "x": -30,
+      "y": -78
+    },
+    {
+      "name": "leg-right",
+      "parent": "torso",
+      "x": 30,
+      "y": -78
+    }
+  ],
+  "slots": [
+    {
+      "name": "leg-left-slot",
+      "bone": "leg-left",
+      "attachment": "leg"
+    },
+    {
+      "name": "leg-right-slot",
+      "bone": "leg-right",
+      "attachment": "leg"
+    },
+    {
+      "name": "arm-left-slot",
+      "bone": "arm-left",
+      "attachment": "arm"
+    },
+    {
+      "name": "arm-right-slot",
+      "bone": "arm-right",
+      "attachment": "arm"
+    },
+    {
+      "name": "torso-slot",
+      "bone": "torso",
+      "attachment": "body"
+    },
+    {
+      "name": "head-slot",
+      "bone": "head",
+      "attachment": "head"
+    }
+  ],
+  "skins": [
+    {
+      "name": "default",
+      "attachments": {
+        "leg-left-slot": {
+          "leg": {
+            "type": "region",
+            "path": "leg",
+            "y": -24,
+            "width": 40,
+            "height": 100
+          }
+        },
+        "leg-right-slot": {
+          "leg": {
+            "type": "region",
+            "path": "leg",
+            "y": -24,
+            "width": 40,
+            "height": 100
+          }
+        },
+        "arm-left-slot": {
+          "arm": {
+            "type": "region",
+            "path": "arm",
+            "y": -27,
+            "width": 36,
+            "height": 88
+          }
+        },
+        "arm-right-slot": {
+          "arm": {
+            "type": "region",
+            "path": "arm",
+            "y": -27,
+            "width": 36,
+            "height": 88
+          }
+        },
+        "torso-slot": {
+          "body": {
+            "type": "region",
+            "path": "body",
+            "y": 0,
+            "width": 112,
+            "height": 116
+          }
+        },
+        "head-slot": {
+          "head": {
+            "type": "region",
+            "path": "head",
+            "y": 0,
+            "width": 112,
+            "height": 88
+          }
+        }
+      }
+    }
+  ],
+  "animations": {
+    "wave": {
+      "bones": {
+        "torso": {
+          "translate": [
+            {
+              "time": 0,
+              "y": 0
+            },
+            {
+              "time": 0.35,
+              "y": 7
+            },
+            {
+              "time": 0.7,
+              "y": 0
+            },
+            {
+              "time": 1.05,
+              "y": 7
+            },
+            {
+              "time": 1.4,
+              "y": 0
+            }
+          ]
+        },
+        "head": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": -5
+            },
+            {
+              "time": 0.7,
+              "angle": 5
+            },
+            {
+              "time": 1.4,
+              "angle": -5
+            }
+          ]
+        },
+        "arm-right": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": -40
+            },
+            {
+              "time": 0.35,
+              "angle": -115
+            },
+            {
+              "time": 0.7,
+              "angle": -75
+            },
+            {
+              "time": 1.05,
+              "angle": -115
+            },
+            {
+              "time": 1.4,
+              "angle": -40
+            }
+          ]
+        },
+        "arm-left": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 8
+            },
+            {
+              "time": 0.7,
+              "angle": -8
+            },
+            {
+              "time": 1.4,
+              "angle": 8
+            }
+          ]
+        }
+      }
+    }
+  }
+}

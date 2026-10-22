@@ -1,0 +1,7 @@
+'use strict';
+const zlib=require('zlib');
+const table=Array.from({length:256},(_,n)=>{for(let k=0;k<8;k++)n=n&1?0xedb88320^(n>>>1):n>>>1;return n>>>0;});
+function chunk(type,data){const name=Buffer.from(type),b=Buffer.concat([name,data]);let crc=0xffffffff;for(const byte of b)crc=table[(crc^byte)&255]^(crc>>>8);const out=Buffer.alloc(data.length+12);out.writeUInt32BE(data.length);b.copy(out,4);out.writeUInt32BE((crc^0xffffffff)>>>0,out.length-4);return out;}
+module.exports=function encode(frames,width,height,fps=20){if(!frames.length)throw Error('没有动画帧');const ihdr=Buffer.alloc(13);ihdr.writeUInt32BE(width);ihdr.writeUInt32BE(height,4);ihdr[8]=8;ihdr[9]=6;const actl=Buffer.alloc(8);actl.writeUInt32BE(frames.length);const out=[Buffer.from([137,80,78,71,13,10,26,10]),chunk('IHDR',ihdr),chunk('acTL',actl)];let seq=0;
+for(let i=0;i<frames.length;i++){const frame=Buffer.from(frames[i]);if(frame.length!==width*height*4)throw Error('帧尺寸不一致');const ctl=Buffer.alloc(26);ctl.writeUInt32BE(seq++);ctl.writeUInt32BE(width,4);ctl.writeUInt32BE(height,8);ctl.writeUInt16BE(1,20);ctl.writeUInt16BE(fps,22);out.push(chunk('fcTL',ctl));const scan=Buffer.alloc((width*4+1)*height);for(let y=0;y<height;y++)frame.copy(scan,y*(width*4+1)+1,y*width*4,(y+1)*width*4);const compressed=zlib.deflateSync(scan,{level:6});if(i===0)out.push(chunk('IDAT',compressed));else{const id=Buffer.alloc(4);id.writeUInt32BE(seq++);out.push(chunk('fdAT',Buffer.concat([id,compressed])));}}
+out.push(chunk('IEND',Buffer.alloc(0)));return Buffer.concat(out);};
